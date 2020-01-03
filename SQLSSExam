@@ -42,17 +42,24 @@ SELECT * FROM naep WHERE mathdiff > 30;
 
 —5
 
-SELECT state AS bottom_10_states 
-FROM naep 
-WHERE year = '2000' 
-ORDER BY avg_math_4_score 
+SELECT 
+	state AS bottom_10_states 
+FROM 
+	naep 
+WHERE 
+	year = '2000' 
+ORDER BY 
+	avg_math_4_score 
 LIMIT 10;
 
 —6
 
-SELECT round(AVG(avg_math_4_score), 2)
-FROM naep
-WHERE year = '2000';
+SELECT 
+	round(AVG(avg_math_4_score), 2)
+FROM 
+	naep
+WHERE 
+	year = '2000';
 
 —7
 
@@ -61,21 +68,32 @@ WITH AVR_ST AS
     FROM naep
     WHERE year = '2000'
     GROUP BY state)
-SELECT avg_math_4_score AS below_average_states_y2000, state
-FROM naep, AVR_ST
-WHERE avg_math_4_score < AVG_STATES;
+SELECT 
+	avg_math_4_score AS below_average_states_y2000, state
+FROM 
+	naep, AVR_ST
+WHERE 
+	avg_math_4_score < AVG_STATES;
 
 —8
 
-SELECT state as  scores_missing_y2000
-FROM naep
-WHERE year = '2000' AND avg_math_4_score IS NULL;
+SELECT 
+	state as  scores_missing_y2000
+FROM 
+	naep
+WHERE 
+	year = '2000' AND avg_math_4_score IS NULL;
 
 —9
 
-SELECT naep.state, ROUND(naep.avg_math_4_score, 2) as avg_math_4_score, finance.total_expenditure
-FROM naep
-LEFT OUTER JOIN finance ON naep.id = finance.id
-WHERE naep.year = '2000' AND avg_math_4_score IS NOT NULL
-ORDER BY finance.total_expenditure DESC;
+SELECT 
+	naep.state, ROUND(naep.avg_math_4_score, 2) as avg_math_4_score, finance.total_expenditure
+FROM 
+	naep
+LEFT OUTER JOIN 
+	finance ON naep.id = finance.id
+WHERE 
+	naep.year = '2000' AND avg_math_4_score IS NOT NULL
+ORDER BY 
+	finance.total_expenditure DESC;
 
