@@ -1,14 +1,25 @@
 {\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf500
-{\fonttbl\f0\fmodern\fcharset0 Courier;}
-{\colortbl;\red255\green255\blue255;\red38\green38\blue38;\red240\green240\blue240;}
-{\*\expandedcolortbl;;\cssrgb\c20000\c20000\c20000;\cssrgb\c95294\c95294\c95294;}
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fmodern\fcharset0 Courier;\f2\fswiss\fcharset0 Helvetica-Oblique;
+}
+{\colortbl;\red255\green255\blue255;\red42\green44\blue41;\red249\green249\blue249;\red38\green38\blue38;
+\red240\green240\blue240;}
+{\*\expandedcolortbl;;\cssrgb\c21569\c22745\c21176;\cssrgb\c98039\c98039\c98039;\cssrgb\c20000\c20000\c20000;
+\cssrgb\c95294\c95294\c95294;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid1\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat4\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid101\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat5\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid201\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid3}
+{\list\listtemplateid4\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat5\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid301\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid4}
+{\list\listtemplateid5\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat8\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid401\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid5}
+{\list\listtemplateid6\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat9\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid501\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid6}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}{\listoverride\listid4\listoverridecount0\ls4}{\listoverride\listid5\listoverridecount0\ls5}{\listoverride\listid6\listoverridecount0\ls6}}
 \margl1440\margr1440\vieww10800\viewh11920\viewkind0
 \deftab720
 \pard\pardeftab720\sl440\partightenfactor0
 
-\f0\fs35\fsmilli17778 \cf2 \cb3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 \'971\
-\
+\f0\fs40 \cf2 \cb3 1.	\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Write a query that allows you to inspect the schema of the naep table.\cb1 \
+
+\f1\fs35\fsmilli17778 \cf4 \cb5 \outl0\strokewidth0 \
 SELECT \
 	COLUMN_NAME \
 FROM \
@@ -16,14 +27,31 @@ FROM \
 WHERE\
 	TABLE_NAME = 'naep'\
 \
-\'972\
 \
-SELECT *\
-FROM naep\
+\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl680\sa266\partightenfactor0
+\ls1\ilvl0
+\f0\fs40 \cf2 \cb3 \kerning1\expnd0\expndtw0 2. \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Write a query that returns the first 50 records of the naep table.\cb1 \
+\pard\pardeftab720\sl440\partightenfactor0
+
+\f1\fs35\fsmilli17778 \cf4 \cb5 \outl0\strokewidth0 \
+\
+SELECT \
+	*\
+FROM \
+	naep\
 LIMIT 50;\
 \
-\'973\
 \
+\
+
+\f0\fs40 \cf2 \cb3 \kerning1\expnd0\expndtw0 3.	\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Write a query that returns summary statistics for\'a0
+\f2\i avg_math_4_score
+\f0\i0 \'a0by state. Make sure to sort the results alphabetically by state name.\cb1 \
+
+\f1\fs35\fsmilli17778 \cf4 \cb5 \outl0\strokewidth0 \
 SELECT \
 	state,\
 	min(avg_math_4_score) as minmath,\
@@ -35,7 +63,15 @@ FROM\
 GROUP BY state\
 ORDER BY state ASC;\
 \
-\'974\
+\
+\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl680\sa266\partightenfactor0
+\ls2\ilvl0
+\f0\fs40 \cf2 \cb3 \kerning1\expnd0\expndtw0 {\listtext	4.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Write a query that alters the previous query so that it returns only the summary statistics for avg_math_4_score by state with differences in max and min values that are greater than 30.\cb1 \
+\pard\pardeftab720\sl440\partightenfactor0
+
+\f1\fs35\fsmilli17778 \cf4 \cb5 \outl0\strokewidth0 \
 \
 WITH naep as (SELECT\
 	state,\
@@ -49,43 +85,117 @@ GROUP BY state\
 ORDER BY mathdiff) \
 SELECT * FROM naep WHERE mathdiff > 30;\
 \
-\'975\
 \
-SELECT state AS bottom_10_states \
-FROM naep \
-WHERE year = '2000' \
-ORDER BY avg_math_4_score \
+\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl680\sa266\partightenfactor0
+\ls3\ilvl0
+\f0\fs40 \cf2 \cb3 \kerning1\expnd0\expndtw0 {\listtext	5.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Write a query that returns a field called\'a0
+\f2\i bottom_10_states
+\f0\i0 \'a0that lists the states in the bottom 10 for\'a0
+\f2\i avg_math_4_score
+\f0\i0 \'a0in the year 2000.\cb1 \
+\pard\pardeftab720\sl440\partightenfactor0
+
+\f1\fs35\fsmilli17778 \cf4 \cb5 \outl0\strokewidth0 \
+\
+SELECT \
+	state AS bottom_10_states \
+FROM \
+	naep \
+WHERE \
+	year = '2000' \
+ORDER BY \
+	avg_math_4_score \
 LIMIT 10;\
 \
-\'976\
 \
-SELECT round(AVG(avg_math_4_score), 2)\
-FROM naep\
-WHERE year = '2000';\
 \
-\'977\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl680\sa266\partightenfactor0
+\ls4\ilvl0
+\f0\fs40 \cf2 \cb3 \kerning1\expnd0\expndtw0   6. \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Write a query that calculates the average\'a0
+\f2\i avg_math_4_score
+\f0\i0 rounded to the nearest 2 decimal places over all states in the year 2000.\cb1 \
+\pard\pardeftab720\sl440\partightenfactor0
+
+\f1\fs35\fsmilli17778 \cf4 \cb5 \outl0\strokewidth0 \
+\
+SELECT \
+	round(AVG(avg_math_4_score), 2)\
+FROM \
+	naep\
+WHERE \
+	year = '2000';\
+\
+\
+\
+
+\f0\fs40 \cf2 \cb3 \kerning1\expnd0\expndtw0   7.	\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Write a query that returns a field called\'a0
+\f2\i below_average_states_y2000
+\f0\i0 \'a0that lists all states with an\'a0
+\f2\i avg_math_4_score
+\f0\i0 \'a0less than the average over all states in the year 2000.\cb1 \
+
+\f1\fs35\fsmilli17778 \cf4 \cb5 \outl0\strokewidth0 \
 \
 WITH AVR_ST AS\
     (SELECT avg(avg_math_4_score) as AVG_STATES\
     FROM naep\
     WHERE year = '2000'\
     GROUP BY state)\
-SELECT avg_math_4_score AS below_average_states_y2000, state\
-FROM naep, AVR_ST\
-WHERE avg_math_4_score < AVG_STATES;\
+SELECT \
+	avg_math_4_score AS below_average_states_y2000, state\
+FROM \
+	naep, AVR_ST\
+WHERE \
+	avg_math_4_score < AVG_STATES;\
 \
-\'978\
 \
-SELECT state as  scores_missing_y2000\
-FROM naep\
-WHERE year = '2000' AND avg_math_4_score IS NULL;\
 \
-\'979\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl680\sa266\partightenfactor0
+\ls5\ilvl0
+\f0\fs40 \cf2 \cb3 \kerning1\expnd0\expndtw0 {\listtext	8.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Write a query that returns a field called\'a0
+\f2\i scores_missing_y2000
+\f0\i0 \'a0that lists any states with missing values in the\'a0
+\f2\i avg_math_4_score
+\f0\i0 column of the\'a0
+\f2\i naep
+\f0\i0 \'a0data table for the year 2000.\cb1 \
+\pard\pardeftab720\sl440\partightenfactor0
+
+\f1\fs35\fsmilli17778 \cf4 \cb5 \outl0\strokewidth0 \
 \
-SELECT naep.state, ROUND(naep.avg_math_4_score, 2) as avg_math_4_score, finance.total_expenditure\
-FROM naep\
-LEFT OUTER JOIN finance ON naep.id = finance.id\
-WHERE naep.year = '2000' AND avg_math_4_score IS NOT NULL\
-ORDER BY finance.total_expenditure DESC;\
+SELECT \
+	state as  scores_missing_y2000\
+FROM \
+	naep\
+WHERE \
+	year = '2000' AND avg_math_4_score IS NULL;\
+\
+\
+\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl680\sa266\partightenfactor0
+\ls6\ilvl0
+\f0\fs40 \cf2 \cb3 \kerning1\expnd0\expndtw0 {\listtext	9.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Write a query that returns for the year 2000 the state, avg_math_4_score, and total_expenditure from the naep table left outer joined with the finance table, using id as the key and ordered by total_expenditure greatest to least. Be sure to round avg_math_4_score to the nearest 2 decimal places, and then filter out NULL avg_math_4_scores in order to see any correlation more clearly.\cb1 \
+\pard\pardeftab720\sl440\partightenfactor0
+
+\f1\fs35\fsmilli17778 \cf4 \cb5 \outl0\strokewidth0 \
+\
+SELECT \
+	naep.state, ROUND(naep.avg_math_4_score, 2) as avg_math_4_score, finance.total_expenditure\
+FROM \
+	naep\
+LEFT OUTER JOIN \
+	finance ON naep.id = finance.id\
+WHERE \
+	naep.year = '2000' AND avg_math_4_score IS NOT NULL\
+ORDER BY \
+	finance.total_expenditure DESC;\
+\
+\
 \
 }
